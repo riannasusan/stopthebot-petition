@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop the Bot - Petition</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 20px; 
+            background-color: #f4f4f4; 
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 { 
+            color: #d63031; 
+        }
+        p { 
+            margin-bottom: 20px; 
+        }
+        form {
+            margin-top: 20px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #d63031;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #b22222;
+        }
+        .supporters {
+            margin-top: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #ffecec;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stop the Bot - Sign the Petition</h1>
+        <p>AI is taking over social media, reshaping culture and erasing diversity. We must act now to demand accountability! Sign the petition to push for regulation and fair AI policies.</p>
+        <p><strong>Call to action by Movers, Leaders & Shakers.</strong></p>
+        
+        <form id="petitionForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <button type="submit">Sign the Petition</button>
+        </form>
+        
+        <div class="supporters">
+            <h2>Supporters</h2>
+            <ul id="supportersList"></ul>
+        </div>
+        
+        <div class="footer">
+            <p>Join the movement! Visit <a href="#">www.stopthebot.org</a> to learn more.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('petitionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            if (name.trim() !== "") {
+                let listItem = document.createElement('li');
+                listItem.textContent = name;
+                document.getElementById('supportersList').appendChild(listItem);
+                document.getElementById('name').value = ""; 
+            }
+        });
+    </script>
+</body>
+</html>
